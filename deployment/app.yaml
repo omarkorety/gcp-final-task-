@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app
+  namespace: gcp-final-task
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: my-app
+  template:
+    metadata:
+      labels:
+        name: my-app
+    spec:
+      containers:
+      - name: my-apps
+        image: gcr.io/omars-project-367822/gcp-app
+        ports:
+          - name: app-port
+            containerPort: 8000
+        env:
+        # - name: ENVIRONMENT
+        #   value: "DEV"
+        # - name: HOST
+        #   value: "redis-pod"
+        # - name: PORT
+        #   value: "8000"
+        - name: REDIS_HOST
+          value: "redis-svc"
+        # - name: REDIS_PORT
+        #   value: "6379"
+        # - name: REDIS_DB
+        #   value: "0"    
+    
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: gcp-service
+  namespace: gcp-final-task
+spec:
+  type: LoadBalancer
+  ports:
+    - port: 8000
+      targetPort: 8000
+  selector:
+    app: my-app
+
+
+
