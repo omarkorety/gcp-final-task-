@@ -40,7 +40,7 @@ docker push gcr.io/omars-project-367822/redis
 
 ![Screenshot from 2022-11-18 14-19-08](https://user-images.githubusercontent.com/29188579/202703605-64e7d3d1-a27a-47ea-b377-4d702fc532ae.png)
 
-## The images pused to GCR
+## The images pushed to GCR
 
 ![Screenshot from 2022-11-18 14-14-09](https://user-images.githubusercontent.com/29188579/202703712-2f186678-7bd3-497b-8d78-82e04f73a37c.png)
 
@@ -54,3 +54,15 @@ kubectl create namespace gcp-final-task
 kubectl create -f app.yaml
 kubectl create -f redis.yaml
 ```
+
+
+##The application is running 
+
+![Screenshot from 2022-11-18 03-36-33](https://user-images.githubusercontent.com/29188579/202715445-6cb540a4-d45b-4a3b-9bc7-96df30de4407.png)
+
+
+![Screenshot from 2022-11-18 03-52-54](https://user-images.githubusercontent.com/29188579/202715599-57553e52-0dc4-42d8-b302-1718e48dc6f3.png)
+
+
+
+
